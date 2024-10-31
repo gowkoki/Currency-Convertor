@@ -1,15 +1,16 @@
 services:
   - type: web
     name: currency-converter
-    env: docker
-    dockerfilePath: Dockerfile
+    env: java
+    buildCommand: "./mvnw clean install"
+    startCommand: "java -jar target/currency_converter-0.0.1-SNAPSHOT.jar"
     plan: starter
     envVars:
-      - key: rapidapi.key
+      - key: RAPIDAPI_KEY
         sync: false
-      - key: rapidapi.host
+      - key: RAPIDAPI_HOST
         sync: false
-      - key: currency.api.symbols.url
+      - key: CURRENCY_API_SYMBOLS_URL
         sync: false
-      - key: currency.api.convert.url
+      - key: CURRENCY_API_CONVERT_URL
         sync: false

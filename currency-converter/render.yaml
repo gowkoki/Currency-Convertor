@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: currency-converter
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: starter
+    envVars:
+      - key: rapidapi.key
+        sync: false
+      - key: rapidapi.host
+        sync: false
+      - key: currency.api.symbols.url
+        sync: false
+      - key: currency.api.convert.url
+        sync: false

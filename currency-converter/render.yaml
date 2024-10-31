@@ -2,7 +2,7 @@ services:
   - type: web
     name: currency-converter
     env: java
-    buildCommand: "./mvnw clean install"
+    buildCommand: "mvnw clean install"
     startCommand: "java -jar target/currency_converter-0.0.1-SNAPSHOT.jar"
     plan: starter
     envVars:
